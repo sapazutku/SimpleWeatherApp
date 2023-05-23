@@ -18,13 +18,20 @@ struct CityHeader: View {
                 .bold()
             
             VStack {
-                Text("Current: \(city.temperature?.current ?? 0, specifier: "%.1f")°")
+                Text("Current: \(city.main?.temp ?? 0, specifier: "%.1f")°")
                     .font(.headline)
-                Text("Feels Like: \(city.temperature?.current ?? 0, specifier: "%.1f")°")
+                Text("Feels Like: \(city.main?.feels_like ?? 0, specifier: "%.1f")°")
                     .font(.headline)
                 HStack{
-                    Text("H: \(city.temperature?.high ?? 0, specifier: "%.1f")°")
-                    Text("L: \(city.temperature?.low ?? 0, specifier: "%.1f")°")
+                    HStack{
+                        Image(systemName: "thermometer.low").foregroundColor(Color.blue)
+                        Text("L: \(city.main?.temp_min ?? 0, specifier: "%.1f")°")
+                    }
+                    HStack{
+                        Image(systemName: "thermometer.high").foregroundColor(Color.red)
+                        
+                        Text("H: \(city.main?.temp_max ?? 0, specifier: "%.1f")°")
+                    }
                 }
             }
         }

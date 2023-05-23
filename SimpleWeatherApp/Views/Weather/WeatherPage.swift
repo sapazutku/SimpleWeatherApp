@@ -25,15 +25,16 @@ struct WeatherPage: View {
     }
 
     var weatherGradient: [Color] {
-        switch city.weather?.description {
-        case "sunny":
+        switch city.weather?[0].description {
+        case "clear sky":
             return [Color.orange, Color.blue]
-        case "cloudy":
+        case "few clouds", "scattered clouds", "broken clouds", "overcast clouds":
             return [Color.gray, Color.blue]
         default:
             return [Color.blue, Color.purple]
         }
     }
+
 }
 
 

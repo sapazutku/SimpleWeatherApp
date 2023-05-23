@@ -10,11 +10,11 @@ import Combine
 
 class ModelData: ObservableObject {
     @Published var cities: [City] = [] //load("cityData.json")
-    @Published var currentCity: City = City(id: 1, name: "İstanbul", coord: Coordinates(lon: 100, lat: 100), temperature: Temperature(current: 10, high: 12, low: 8), weather: Weather(description: "cloudy", humidity: 10.1, windSpeed: 100, seaLevel: 2))
+    @Published var currentCity: City = City(id: 1, name: "IStanbul", coord: Coordinate(lon: 100, lat: 100), weather: [Weather(id: 1, main: "Cloudy", description: "scattered clouds", icon: "01n")], main: Main(temp: 10, feels_like: 100, temp_min: 100, temp_max: 100, pressure: 1, humidity: 1, sea_level: 1, grnd_level: 1), visibility: 1, wind: Wind(speed: 1, deg: 1, gust: 1), clouds: Clouds(all: 1), dt: 1, sys: Sys(country: "TR", sunrise: 1, sunset: 1), timezone: 1, cod: 1)
     
-    var exampleCity = City(id: 1, name: "İstanbul", coord: Coordinates(lon: 100, lat: 100), temperature: Temperature(current: 10, high: 12, low: 8), weather: Weather(description: "sunny", humidity: 10.1, windSpeed: 100, seaLevel: 2))
+    var exampleCity = City(id: 1, name: "IStanbul", coord: Coordinate(lon: 100, lat: 100), weather: [Weather(id: 1, main: "Cloudy", description: "scattered clouds", icon: "01n")], main: Main(temp: 10, feels_like: 100, temp_min: 100, temp_max: 100, pressure: 1, humidity: 1, sea_level: 1, grnd_level: 1), visibility: 1, wind: Wind(speed: 1, deg: 1, gust: 1), clouds: Clouds(all: 1), dt: 1, sys: Sys(country: "TR", sunrise: 1, sunset: 1), timezone: 1, cod: 1)
     
-    var exampleSunnyCity = City(id: 1, name: "İstanbul", coord: Coordinates(lon: 100, lat: 100), temperature: Temperature(current: 10, high: 12, low: 8), weather: Weather(description: "sunny", humidity: 10.1, windSpeed: 100, seaLevel: 2))
+    var exampleSunnyCity = City(id: 1, name: "IStanbul", coord: Coordinate(lon: 100, lat: 100), weather: [Weather(id: 1, main: "Cloudy", description: "scattered clouds", icon: "01n")], main: Main(temp: 10, feels_like: 100, temp_min: 100, temp_max: 100, pressure: 1, humidity: 1, sea_level: 1, grnd_level: 1), visibility: 1, wind: Wind(speed: 1, deg: 1, gust: 1), clouds: Clouds(all: 1), dt: 1, sys: Sys(country: "TR", sunrise: 1, sunset: 1), timezone: 1, cod: 1)
 
 }
 
@@ -42,29 +42,6 @@ func load<T: Decodable>(_ filename: String) -> T {
 // example City
 
 
-struct City: Codable, Identifiable {
-    var id: Int
-    var name: String
-    var state: String?
-    var country: String?
-    var coord: Coordinates
-    var temperature: Temperature?
-    var weather: Weather?
-    
-    enum CodingKeys: String, CodingKey {
-        case id, name, state, country, coord
-    }
-}
-
-
-struct Weather: Codable {
-    var description: String
-    var humidity: Double
-    var windSpeed: Double
-    var seaLevel: Double
-}
-
-
 struct Temperature: Codable {
     var current: Double
     var high: Double
@@ -75,10 +52,3 @@ struct Coordinates: Codable {
     var lon: Double
     var lat: Double
 }
-
-
-    
-
-
-
-

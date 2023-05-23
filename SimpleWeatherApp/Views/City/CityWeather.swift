@@ -13,13 +13,13 @@ struct CityWeather: View {
     var body: some View {
         ZStack{
             List {
-                CityRow(title: "Humidity", value: "\(city.weather?.humidity ?? 0)%", iconName: "drop.fill")
+                CityRow(title: "Humidity", value: "\(city.main?.humidity ?? 0)%", iconName: "drop.fill")
                 
-                CityRow(title: "Wind Speed", value: "\(city.weather?.windSpeed ?? 0) m/s", iconName: "wind")
+                CityRow(title: "Wind Speed", value: "\(city.wind?.speed ?? 0) m/s", iconName: "wind")
                
-                CityRow(title: "Sea Level", value: "\(city.weather?.seaLevel ?? 0) m", iconName: "water.waves")
+                CityRow(title: "Sea Level", value: "\(city.main?.sea_level ?? 0) m", iconName: "water.waves")
                 
-                CityRow(title: "Coordinates", value: "\(city.coord.lat)",value2: "\(city.coord.lon)", iconName: "location.fill")
+                CityRow(title: "Coordinates", value: "\(city.coord?.lat ?? 0)",value2: "\(city.coord?.lon ?? 0)", iconName: "location.fill")
             }
             .listStyle(PlainListStyle())
             .clipShape(RoundedRectangle(cornerRadius: 25))
