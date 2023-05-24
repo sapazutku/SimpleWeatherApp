@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import EasySkeleton
 
 struct CityDescription: View {
     var city: City
+    @ObservedObject var modelData: ModelData
     var body: some View {
         Divider()
         VStack{
@@ -19,14 +21,14 @@ struct CityDescription: View {
                 Spacer()
                 Image(systemName: "sunrise.fill").foregroundColor(Color.yellow)
                 Spacer()
-            }
+            }.skeletonable().skeletonCornerRadius(15)
             HStack{
                 Spacer()
                 Text("Sunset: \(DateFormatter.localizedString(from: Date(timeIntervalSince1970: TimeInterval(city.sys?.sunset ?? 0)), dateStyle: .none, timeStyle: .short))") 
                 Spacer()
                 Image(systemName: "sunset.fill").foregroundColor(Color.orange)
                 Spacer()
-            }
+            }.skeletonable().skeletonCornerRadius(15)
             HStack{
                 Spacer()
                 Text("Weather is mostly \(city.weather?[0].description ?? "Clear")")
@@ -35,12 +37,13 @@ struct CityDescription: View {
                 Image(systemName: getWeatherIcon(iconName: city.weather?[0].icon ?? "01d").0)
                     .foregroundColor(getWeatherIcon(iconName: city.weather?[0].icon ?? "01d").1)
                 Spacer()
-            }
+            }.skeletonable().skeletonCornerRadius(15)
 
         }
         // alignment of the text
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.all)
+        .setSkeleton(Binding(get: { self.modelData.isLoading }, set: { self.modelData.isLoading = $0 }))
         Spacer()
     }
 
@@ -96,6 +99,6 @@ struct CityDescription: View {
 
 struct CityDescription_Previews: PreviewProvider {
     static var previews: some View {
-        CityDescription(city: ModelData().currentCity)
+        CityDescription(city: ModelData().currentCity, modelData: ModelData())
     }
 }

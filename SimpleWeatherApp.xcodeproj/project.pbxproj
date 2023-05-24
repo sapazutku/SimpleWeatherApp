@@ -22,6 +22,7 @@
 		54E3B2BE2A1D601800C4CBC1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B2BD2A1D601800C4CBC1 /* Models.swift */; };
 		54E3B2C12A1D6DF200C4CBC1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 54E3B2C02A1D6DF200C4CBC1 /* Moya */; };
 		54E3B2C42A1D730700C4CBC1 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B2C32A1D730700C4CBC1 /* WeatherAPI.swift */; };
+		54E3B2C72A1D8D0900C4CBC1 /* EasySkeleton in Frameworks */ = {isa = PBXBuildFile; productRef = 54E3B2C62A1D8D0900C4CBC1 /* EasySkeleton */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54E3B2C12A1D6DF200C4CBC1 /* Moya in Frameworks */,
+				54E3B2C72A1D8D0900C4CBC1 /* EasySkeleton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +175,7 @@
 			name = SimpleWeatherApp;
 			packageProductDependencies = (
 				54E3B2C02A1D6DF200C4CBC1 /* Moya */,
+				54E3B2C62A1D8D0900C4CBC1 /* EasySkeleton */,
 			);
 			productName = SimpleWeatherApp;
 			productReference = 54E3B2942A1CEA4A00C4CBC1 /* SimpleWeatherApp.app */;
@@ -204,6 +207,7 @@
 			mainGroup = 54E3B28B2A1CEA4A00C4CBC1;
 			packageReferences = (
 				54E3B2BF2A1D6DF200C4CBC1 /* XCRemoteSwiftPackageReference "Moya" */,
+				54E3B2C52A1D8D0900C4CBC1 /* XCRemoteSwiftPackageReference "EasySkeleton" */,
 			);
 			productRefGroup = 54E3B2952A1CEA4A00C4CBC1 /* Products */;
 			projectDirPath = "";
@@ -453,6 +457,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		54E3B2C52A1D8D0900C4CBC1 /* XCRemoteSwiftPackageReference "EasySkeleton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SpectralDragon/EasySkeleton";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -460,6 +472,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 54E3B2BF2A1D6DF200C4CBC1 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		54E3B2C62A1D8D0900C4CBC1 /* EasySkeleton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54E3B2C52A1D8D0900C4CBC1 /* XCRemoteSwiftPackageReference "EasySkeleton" */;
+			productName = EasySkeleton;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
