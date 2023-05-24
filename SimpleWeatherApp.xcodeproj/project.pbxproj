@@ -20,6 +20,8 @@
 		54E3B2BA2A1D1C8600C4CBC1 /* WeatherPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B2B92A1D1C8600C4CBC1 /* WeatherPage.swift */; };
 		54E3B2BC2A1D524800C4CBC1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B2BB2A1D524800C4CBC1 /* LoadingView.swift */; };
 		54E3B2BE2A1D601800C4CBC1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B2BD2A1D601800C4CBC1 /* Models.swift */; };
+		54E3B2C12A1D6DF200C4CBC1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 54E3B2C02A1D6DF200C4CBC1 /* Moya */; };
+		54E3B2C42A1D730700C4CBC1 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B2C32A1D730700C4CBC1 /* WeatherAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,7 @@
 		54E3B2B92A1D1C8600C4CBC1 /* WeatherPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPage.swift; sourceTree = "<group>"; };
 		54E3B2BB2A1D524800C4CBC1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		54E3B2BD2A1D601800C4CBC1 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		54E3B2C32A1D730700C4CBC1 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E3B2C12A1D6DF200C4CBC1 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +73,7 @@
 		54E3B2962A1CEA4A00C4CBC1 /* SimpleWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				54E3B2C22A1D72F800C4CBC1 /* Network */,
 				54E3B2A72A1CED2500C4CBC1 /* Model */,
 				54E3B2A62A1CED0700C4CBC1 /* Views */,
 				54E3B2A52A1CECFD00C4CBC1 /* Resources */,
@@ -142,6 +147,14 @@
 			path = CitySelection;
 			sourceTree = "<group>";
 		};
+		54E3B2C22A1D72F800C4CBC1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				54E3B2C32A1D730700C4CBC1 /* WeatherAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,6 +171,9 @@
 			dependencies = (
 			);
 			name = SimpleWeatherApp;
+			packageProductDependencies = (
+				54E3B2C02A1D6DF200C4CBC1 /* Moya */,
+			);
 			productName = SimpleWeatherApp;
 			productReference = 54E3B2942A1CEA4A00C4CBC1 /* SimpleWeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +202,9 @@
 				Base,
 			);
 			mainGroup = 54E3B28B2A1CEA4A00C4CBC1;
+			packageReferences = (
+				54E3B2BF2A1D6DF200C4CBC1 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 54E3B2952A1CEA4A00C4CBC1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -213,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E3B2C42A1D730700C4CBC1 /* WeatherAPI.swift in Sources */,
 				54E3B2B52A1CF2C300C4CBC1 /* CityDescription.swift in Sources */,
 				54E3B29A2A1CEA4A00C4CBC1 /* ContentView.swift in Sources */,
 				54E3B2B12A1CF29000C4CBC1 /* CityHeader.swift in Sources */,
@@ -423,6 +443,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54E3B2BF2A1D6DF200C4CBC1 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54E3B2C02A1D6DF200C4CBC1 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54E3B2BF2A1D6DF200C4CBC1 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 54E3B28C2A1CEA4A00C4CBC1 /* Project object */;
 }

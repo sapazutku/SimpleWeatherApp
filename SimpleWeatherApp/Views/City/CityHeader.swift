@@ -24,14 +24,15 @@ struct CityHeader: View {
                     .font(.headline)
                 HStack{
                     HStack{
-                        Image(systemName: "thermometer.low").foregroundColor(Color.blue)
-                        Text("L: \(city.main?.temp_min ?? 0, specifier: "%.1f")°")
-                    }
-                    HStack{
                         Image(systemName: "thermometer.high").foregroundColor(Color.red)
                         
                         Text("H: \(city.main?.temp_max ?? 0, specifier: "%.1f")°")
                     }
+                    HStack{
+                        Image(systemName: "thermometer.low").foregroundColor(Color.blue)
+                        Text("L: \(city.main?.temp_min ?? 0, specifier: "%.1f")°")
+                    }
+                    
                 }
             }
         }
@@ -45,6 +46,6 @@ struct CityHeader: View {
 
 struct CityHeader_Previews: PreviewProvider {
     static var previews: some View {
-        CityHeader(city: ModelData().exampleCity)
+        CityHeader(city: ModelData().currentCity)
     }
 }
