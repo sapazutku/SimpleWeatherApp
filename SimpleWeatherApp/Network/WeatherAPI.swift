@@ -33,7 +33,7 @@ extension WeatherAPI: TargetType {
     var task: Task {
         switch self {
         case let .weatherByCoordinates(lat, lon):
-            return .requestParameters(parameters: ["lat": lat, "lon": lon, "appid": "53609485ee8d32929ce452d8cdb1f82e"], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["lat": lat, "lon": lon,"units": "metric", "appid": "53609485ee8d32929ce452d8cdb1f82e"], encoding: URLEncoding.default)
         case let .weatherById(id):
             return .requestParameters(parameters: ["id": id, "units": "metric", "appid": "53609485ee8d32929ce452d8cdb1f82e"], encoding: URLEncoding.default)
         }

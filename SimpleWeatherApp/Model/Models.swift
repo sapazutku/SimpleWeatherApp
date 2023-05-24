@@ -37,27 +37,27 @@ struct Weather: Codable {
 
 struct Main: Codable {
     let temp: Double
-    let feels_like: Double
-    let temp_min: Double
-    let temp_max: Double
-    let pressure: Int
-    let humidity: Int
-    let sea_level: Int
-    let grnd_level: Int
+    let feels_like: Double?
+    let temp_min: Double?
+    let temp_max: Double?
+    let pressure: Int?
+    let humidity: Int?
+    let sea_level: Int?
+    let grnd_level: Int?
 }
 
 struct Wind: Codable {
-    let speed: Double
-    let deg: Int
-    let gust: Double
+    let speed: Double?
+    let deg: Int?
+    let gust: Double?
 }
 
 struct Clouds: Codable {
-    let all: Int
+    let all: Int?
 }
 
 struct Sys: Codable {
-    let country: String
+    let country: String?
     let sunrise: Int
     let sunset: Int
 }

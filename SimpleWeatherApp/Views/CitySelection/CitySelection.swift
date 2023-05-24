@@ -10,6 +10,7 @@ import SwiftUI
 struct CitySelection: View {
     @EnvironmentObject var modelData: ModelData
     @State private var searchText = ""
+    @State private var selectedCityId: Int?
 
     var body: some View {
         NavigationView {
@@ -18,20 +19,33 @@ struct CitySelection: View {
                 ForEach(modelData.cities.filter { city in
                     searchText.isEmpty || city.name.localizedCaseInsensitiveContains(searchText)
                 }) { city in
-                    NavigationLink(destination: WeatherPage( city: city)) {
+                    Button(action: {
+                        selectedCityId = city.id
+                        modelData.fetchWeatherById(id: city.id)
+                    }) {
                         Text(city.name)
-                    }
-                    .onTapGesture {
-                        modelData.currentCity = city
                     }
                 }
             }
-            
+            .navigationTitle("Cities")
+            .navigationBarTitleDisplayMode(.inline)
+            // the problem was navigate the page without updating the city.
+            .background(
+                NavigationLink(
+                    destination: WeatherPage(city: modelData.searchedCity ?? modelData.currentCity),
+                    isActive: Binding(
+                        get: { selectedCityId != nil && !modelData.isLoading },
+                        set: { _ in }
+                    ),
+                    label: {
+                        EmptyView()
+                    }
+                )
+            )
         }
-        .navigationTitle("Cities")
-        
     }
 }
+
 
 struct SearchBar: View {
     @Binding var text: String

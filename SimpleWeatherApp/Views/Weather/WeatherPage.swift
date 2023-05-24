@@ -16,9 +16,9 @@ struct WeatherPage: View {
             LinearGradient(gradient: Gradient(colors: weatherGradient), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                CityHeader(city: modelData.currentCity, modelData: modelData).padding(.horizontal)
-                CityWeather(city: modelData.currentCity, modelData: modelData )
-                CityDescription(city: modelData.currentCity, modelData: modelData)
+                CityHeader(city: city, modelData: modelData).padding(.horizontal)
+                CityWeather(city: city, modelData: modelData )
+                CityDescription(city: city, modelData: modelData)
             }
             .background(Color.white.opacity(0.5))
         }

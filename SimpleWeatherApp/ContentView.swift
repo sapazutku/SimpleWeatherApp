@@ -15,7 +15,7 @@ struct ContentView: View {
             Color.primary
                     .edgesIgnoringSafeArea(.all)
             TabView {
-                WeatherPage(city: ModelData().currentCity)
+                WeatherPage(city: modelData.currentCity)
                     .tabItem {
                         Label("Weather", systemImage: "cloud.sun.fill")
                     }
