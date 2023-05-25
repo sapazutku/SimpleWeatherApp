@@ -12,7 +12,7 @@ import CoreLocation
 
 class ModelData: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var cities: [City] = loadJSON("cityData.json")
-    @Published var currentCity: City = City(id: 1, name: "Istanbul", coord: Coordinate(lon: 100, lat: 100), weather: [Weather(id: 1, main: "Cloudy", description: "scattered clouds", icon: "01n")], main: Main(temp: 10, feels_like: 100, temp_min: 100, temp_max: 100, pressure: 1, humidity: 1, sea_level: 1, grnd_level: 1), visibility: 1, wind: Wind(speed: 1, deg: 1, gust: 1), clouds: Clouds(all: 1), dt: 1, sys: Sys(country: "TR", sunrise: 1, sunset: 1), timezone: 1, cod: 1)
+    @Published var currentCity: City = City(id: 1, name: "Istanbul", coord: Coordinate(lon: 100, lat: 100), weather: [Weather(id: 1, main: "Rain", description: "scattered clouds", icon: "01n")], main: Main(temp: 10, feels_like: 100, temp_min: 100, temp_max: 100, pressure: 1, humidity: 1, sea_level: 1, grnd_level: 1), visibility: 1, wind: Wind(speed: 1, deg: 1, gust: 1), clouds: Clouds(all: 1), dt: 1, sys: Sys(country: "TR", sunrise: 1, sunset: 1), timezone: 1, cod: 1)
     // searched city
     @Published var searchedCity: City? = nil
     let locationManager = CLLocationManager()

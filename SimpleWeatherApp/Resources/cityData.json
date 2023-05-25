@@ -20,53 +20,152 @@
         }
     },
     {
-            "id": 323776,
-            "name": "Antalya",
-            "state": "",
-            "country": "TR",
-            "coord": {
-                "lon": 30.71777,
-                "lat": 36.77409
-            }
-        },
-        {
-            "id": 323777,
-            "name": "Antalya",
-            "state": "",
-            "country": "TR",
-            "coord": {
-                "lon": 30.69556,
-                "lat": 36.908119
-            }
-        },
-        {
-            "id": 323779,
-            "name": "Antakya",
-            "state": "",
-            "country": "TR",
-            "coord": {
-                "lon": 36.157219,
-                "lat": 36.206551
-            }
-        },
-        {
-            "id": 323784,
-            "name": "Ankara",
-            "state": "",
-            "country": "TR",
-            "coord": {
-                "lon": 32.833328,
-                "lat": 39.916672
-            }
-        },
-        {
-            "id": 323786,
-            "name": "Ankara",
-            "state": "",
-            "country": "TR",
-            "coord": {
-                "lon": 32.854271,
-                "lat": 39.919868
-            }
+        "id": 323776,
+        "name": "Antalya",
+        "state": "",
+        "country": "TR",
+        "coord": {
+            "lon": 30.71777,
+            "lat": 36.77409
         }
+    },
+    {
+        "id": 323777,
+        "name": "Antalya",
+        "state": "",
+        "country": "TR",
+        "coord": {
+            "lon": 30.69556,
+            "lat": 36.908119
+        }
+    },
+    {
+        "id": 323779,
+        "name": "Antakya",
+        "state": "",
+        "country": "TR",
+        "coord": {
+            "lon": 36.157219,
+            "lat": 36.206551
+        }
+    },
+    {
+        "id": 323784,
+        "name": "Ankara",
+        "state": "",
+        "country": "TR",
+        "coord": {
+            "lon": 32.833328,
+            "lat": 39.916672
+        }
+    },
+    {
+        "id": 323786,
+        "name": "Ankara",
+        "state": "",
+        "country": "TR",
+        "coord": {
+            "lon": 32.854271,
+            "lat": 39.919868
+        }
+    },
+    {
+        "id": 524894,
+        "name": "Moscow",
+        "state": "",
+        "country": "RU",
+        "coord": {
+            "lon": 37.606667,
+            "lat": 55.761665
+        }
+    },
+    {
+        "id": 524901,
+        "name": "Moscow",
+        "state": "",
+        "country": "RU",
+        "coord": {
+            "lon": 37.615555,
+            "lat": 55.75222
+        }
+    },
+    {
+        "id": 5115974,
+        "name": "East Moriches",
+        "state": "NY",
+        "country": "US",
+        "coord": {
+            "lon": -72.760933,
+            "lat": 40.805099
+        }
+    },
+    {
+        "id": 5115985,
+        "name": "East New York",
+        "state": "NY",
+        "country": "US",
+        "coord": {
+            "lon": -73.882362,
+            "lat": 40.666771
+        }
+    },
+    {
+        "id": 5115989,
+        "name": "East Northport",
+        "state": "NY",
+        "country": "US",
+        "coord": {
+            "lon": -73.324562,
+            "lat": 40.876759
+        }
+    },
+    {
+        "id": 1816670,
+        "name": "Beijing",
+        "state": "",
+        "country": "CN",
+        "coord": {
+            "lon": 116.397232,
+            "lat": 39.907501
+        }
+    },
+    {
+        "id": 1006984,
+        "name": "East London",
+        "state": "",
+        "country": "ZA",
+        "coord": {
+            "lon": 27.911619,
+            "lat": -33.015289
+        }
+    },
+    {
+        "id": 1880251,
+        "name": "Republic of Singapore",
+        "state": "",
+        "country": "SG",
+        "coord": {
+            "lon": 103.800003,
+            "lat": 1.36667
+        }
+    },
+    {
+        "id": 1880252,
+        "name": "Singapore",
+        "state": "",
+        "country": "SG",
+        "coord": {
+            "lon": 103.850067,
+            "lat": 1.28967
+        }
+    },{
+        "id": 3871336,
+        "name": "Santiago",
+        "state": "",
+        "country": "CL",
+        "coord": {
+            "lon": -70.64827,
+            "lat": -33.45694
+        }
+    }
 ]

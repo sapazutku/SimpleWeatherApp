@@ -6,18 +6,41 @@
 //
 
 import SwiftUI
+import _SpriteKit_SwiftUI
 
 struct WeatherPage: View {
     @EnvironmentObject var modelData: ModelData
     var city: City
 
     var body: some View {
+        
         ZStack {
-            LinearGradient(gradient: Gradient(colors: weatherGradient), startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
+            
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: weatherGradient), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+                
+                // if the weather is rain, show rain animation
+                if city.weather?[0].main == "Rain" {
+                    SpriteView(scene: RainFall(), options: [.allowsTransparency])
+                }
+                if city.weather?[0].main == "Snow"{
+                    SpriteView(scene: Snow(), options: [.allowsTransparency])
+                }
+                if city.weather?[0].main == "Clouds"{
+                    SpriteView(scene: CloudScene(size: CGSize(width: 1250, height: 2500)), options: [.allowsTransparency])
+                }
+                if city.weather?[0].main == "Drizzle" {
+                    SpriteView(scene: Drizzle(), options: [.allowsTransparency])
+                }
+                
+
+            }
             VStack {
                 CityHeader(city: city, modelData: modelData).padding(.horizontal)
+                Divider()
                 CityWeather(city: city, modelData: modelData )
+                Divider()
                 CityDescription(city: city, modelData: modelData)
             }
             .background(Color.white.opacity(0.5))
@@ -25,15 +48,26 @@ struct WeatherPage: View {
     }
 
     var weatherGradient: [Color] {
-        switch city.weather?[0].description {
-        case "clear sky":
-            return [Color.orange, Color.blue]
-        case "few clouds", "scattered clouds", "broken clouds", "overcast clouds":
-            return [Color.gray, Color.blue]
-        default:
-            return [Color.blue, Color.purple]
-        }
+    switch city.weather?[0].main {
+    case "Clear":
+        return [Color.orange, Color.blue]
+    case "Clouds":
+        return [Color.gray, Color.blue]
+    case "Rain":
+        return [Color.gray, Color.darkBlue]
+    case "Snow":
+        return [Color.white, Color.lightGray]
+    case "Drizzle":
+        return [Color.lightBlue, Color.gray]
+    case "Thunderstorm":
+        return [Color.black, Color.darkGray]
+    case "Mist", "Fog":
+        return [Color.lightGray, Color.darkGray]
+    default:
+        return [Color.blue, Color.purple]
     }
+}
+
 
 }
 
