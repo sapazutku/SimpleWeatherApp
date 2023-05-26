@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		547798832A1FDC8D00A47B40 /* SunnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547798822A1FDC8D00A47B40 /* SunnyAnimation.swift */; };
 		54E3B2982A1CEA4A00C4CBC1 /* SimpleWeatherAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B2972A1CEA4A00C4CBC1 /* SimpleWeatherAppApp.swift */; };
 		54E3B29A2A1CEA4A00C4CBC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E3B2992A1CEA4A00C4CBC1 /* ContentView.swift */; };
 		54E3B29C2A1CEA4B00C4CBC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54E3B29B2A1CEA4B00C4CBC1 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		547798822A1FDC8D00A47B40 /* SunnyAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyAnimation.swift; sourceTree = "<group>"; };
 		54E3B2942A1CEA4A00C4CBC1 /* SimpleWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E3B2972A1CEA4A00C4CBC1 /* SimpleWeatherAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWeatherAppApp.swift; sourceTree = "<group>"; };
 		54E3B2992A1CEA4A00C4CBC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				54E3B2CB2A1EC23300C4CBC1 /* RainAnimation.swift */,
 				54E3B2D62A1ECC1800C4CBC1 /* SnowAnimation.swift */,
 				54E3B2DA2A1ED06400C4CBC1 /* CloudAnimation.swift */,
+				547798822A1FDC8D00A47B40 /* SunnyAnimation.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				54E3B2A92A1CED4100C4CBC1 /* ModelData.swift in Sources */,
 				54E3B2E42A1EE1D300C4CBC1 /* Color+Extension.swift in Sources */,
 				54E3B2DB2A1ED06400C4CBC1 /* CloudAnimation.swift in Sources */,
+				547798832A1FDC8D00A47B40 /* SunnyAnimation.swift in Sources */,
 				54E3B2BC2A1D524800C4CBC1 /* LoadingView.swift in Sources */,
 				54E3B2D72A1ECC1800C4CBC1 /* SnowAnimation.swift in Sources */,
 				54E3B2BE2A1D601800C4CBC1 /* Models.swift in Sources */,

@@ -10,113 +10,33 @@
         }
     },
     {
-        "id": 745044,
-        "name": "Istanbul",
+        "id": 2968815,
+        "name": "Paris",
         "state": "",
-        "country": "TR",
+        "country": "FR",
         "coord": {
-            "lon": 28.949659,
-            "lat": 41.01384
+            "lon": 2.3486,
+            "lat": 48.853401
         }
     },
     {
-        "id": 323776,
-        "name": "Antalya",
-        "state": "",
-        "country": "TR",
-        "coord": {
-            "lon": 30.71777,
-            "lat": 36.77409
-        }
-    },
-    {
-        "id": 323777,
-        "name": "Antalya",
-        "state": "",
-        "country": "TR",
-        "coord": {
-            "lon": 30.69556,
-            "lat": 36.908119
-        }
-    },
-    {
-        "id": 323779,
-        "name": "Antakya",
-        "state": "",
-        "country": "TR",
-        "coord": {
-            "lon": 36.157219,
-            "lat": 36.206551
-        }
-    },
-    {
-        "id": 323784,
-        "name": "Ankara",
-        "state": "",
-        "country": "TR",
-        "coord": {
-            "lon": 32.833328,
-            "lat": 39.916672
-        }
-    },
-    {
-        "id": 323786,
-        "name": "Ankara",
-        "state": "",
-        "country": "TR",
-        "coord": {
-            "lon": 32.854271,
-            "lat": 39.919868
-        }
-    },
-    {
-        "id": 524894,
-        "name": "Moscow",
-        "state": "",
-        "country": "RU",
-        "coord": {
-            "lon": 37.606667,
-            "lat": 55.761665
-        }
-    },
-    {
-        "id": 524901,
-        "name": "Moscow",
-        "state": "",
-        "country": "RU",
-        "coord": {
-            "lon": 37.615555,
-            "lat": 55.75222
-        }
-    },
-    {
-        "id": 5115974,
-        "name": "East Moriches",
+        "id": 5128581,
+        "name": "New York City",
         "state": "NY",
         "country": "US",
         "coord": {
-            "lon": -72.760933,
-            "lat": 40.805099
+            "lon": -74.005966,
+            "lat": 40.714272
         }
     },
     {
-        "id": 5115985,
-        "name": "East New York",
-        "state": "NY",
-        "country": "US",
+        "id": 2950158,
+        "name": "Berlin",
+        "state": "",
+        "country": "DE",
         "coord": {
-            "lon": -73.882362,
-            "lat": 40.666771
-        }
-    },
-    {
-        "id": 5115989,
-        "name": "East Northport",
-        "state": "NY",
-        "country": "US",
-        "coord": {
-            "lon": -73.324562,
-            "lat": 40.876759
+            "lon": 10.45,
+            "lat": 54.033329
         }
     },
     {
@@ -130,42 +50,53 @@
         }
     },
     {
-        "id": 1006984,
-        "name": "East London",
+        "id": 2643743,
+        "name": "London",
         "state": "",
-        "country": "ZA",
+        "country": "GB",
         "coord": {
-            "lon": 27.911619,
-            "lat": -33.015289
+            "lon": -0.12574,
+            "lat": 51.50853
         }
     },
     {
-        "id": 1880251,
-        "name": "Republic of Singapore",
+        "id": 524894,
+        "name": "Moscow",
         "state": "",
-        "country": "SG",
+        "country": "RU",
         "coord": {
-            "lon": 103.800003,
-            "lat": 1.36667
+            "lon": 37.606667,
+            "lat": 55.761665
         }
     },
     {
-        "id": 1880252,
-        "name": "Singapore",
+        "id": 3128760,
+        "name": "Barcelona",
         "state": "",
-        "country": "SG",
+        "country": "ES",
         "coord": {
-            "lon": 103.850067,
-            "lat": 1.28967
+            "lon": 2.15899,
+            "lat": 41.38879
         }
-    },{
-        "id": 3871336,
-        "name": "Santiago",
+    },
+    {
+        "id": 3169070,
+        "name": "Rome",
         "state": "",
-        "country": "CL",
+        "country": "IT",
         "coord": {
-            "lon": -70.64827,
-            "lat": -33.45694
+            "lon": 12.4839,
+            "lat": 41.894741
+        }
+    },
+    {
+        "id": 3435907,
+        "name": "Buenos Aires",
+        "state": "",
+        "country": "AR",
+        "coord": {
+            "lon": -60.0,
+            "lat": -36.0
         }
     }
 ]

@@ -12,13 +12,14 @@ import CoreLocation
 
 class ModelData: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var cities: [City] = loadJSON("cityData.json")
-    @Published var currentCity: City = City(id: 1, name: "Istanbul", coord: Coordinate(lon: 100, lat: 100), weather: [Weather(id: 1, main: "Rain", description: "scattered clouds", icon: "01n")], main: Main(temp: 10, feels_like: 100, temp_min: 100, temp_max: 100, pressure: 1, humidity: 1, sea_level: 1, grnd_level: 1), visibility: 1, wind: Wind(speed: 1, deg: 1, gust: 1), clouds: Clouds(all: 1), dt: 1, sys: Sys(country: "TR", sunrise: 1, sunset: 1), timezone: 1, cod: 1)
-    // searched city
+    // current city : based on location homepage city
+    @Published var currentCity: City = City(id: 1, name: "Istanbul", coord: Coordinate(lon: 100, lat: 100), weather: [Weather(id: 1, main: "Clear", description: "scattered clouds", icon: "01n")], main: Main(temp: 10, feels_like: 100, temp_min: 100, temp_max: 100, pressure: 1, humidity: 1, sea_level: 1, grnd_level: 1), visibility: 1, wind: Wind(speed: 1, deg: 1, gust: 1), clouds: Clouds(all: 1), dt: 1, sys: Sys(country: "TR", sunrise: 1, sunset: 1), timezone: 1, cod: 1)
+    // searched city : City selection
     @Published var searchedCity: City? = nil
     let locationManager = CLLocationManager()
-    
     private let provider = MoyaProvider<WeatherAPI>()
     @Published var isLoading = false
+    
     override init() {
         super.init()
         self.locationManager.delegate = self
@@ -26,7 +27,6 @@ class ModelData: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         fetchWeatherByCoordinates(lat: locationManager.location?.coordinate.latitude ?? 21, lon: locationManager.location?.coordinate.longitude ?? 48)
-        
     }
     
     
@@ -93,11 +93,6 @@ class ModelData: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
         }
     }
-    
-    
-    
-    
-    
 }
 
 func loadJSON<T: Decodable>(_ filename: String) -> T {
@@ -119,18 +114,4 @@ func loadJSON<T: Decodable>(_ filename: String) -> T {
     } catch {
         fatalError("Could not parse \(filename) as \(T.self):\n\(error)")
     }
-}
-
-// example City
-
-
-struct Temperature: Codable {
-    var current: Double
-    var high: Double
-    var low: Double
-}
-
-struct Coordinates: Codable {
-    var lon: Double
-    var lat: Double
 }

@@ -13,29 +13,42 @@ struct CityDescription: View {
     @ObservedObject var modelData: ModelData
     var body: some View {
         ScrollView{
-            VStack{
-                Text("Description").font(.title).padding()
-                HStack{
-                    Spacer()
-                    Text("Sunrise: \(DateFormatter.localizedString(from: Date(timeIntervalSince1970: TimeInterval(city.sys?.sunrise ?? 0)), dateStyle: .none, timeStyle: .short))")
-                    Spacer()
-                    Image(systemName: "sunrise.fill").foregroundColor(Color.yellow)
-                    Spacer()
-                }.skeletonable().skeletonCornerRadius(15)
-                HStack{
-                    Spacer()
-                    Text("Sunset: \(DateFormatter.localizedString(from: Date(timeIntervalSince1970: TimeInterval(city.sys?.sunset ?? 0)), dateStyle: .none, timeStyle: .short))")
-                    Spacer()
-                    Image(systemName: "sunset.fill").foregroundColor(Color.orange)
+            Text("Description").font(.title).padding(.top)
+            Divider()
+            HStack{
+                VStack{
+                    
+                    HStack{
+                        Spacer()
+                        Text("Sunrise: ")
+                        Image(systemName: "sunrise.fill").foregroundColor(Color.yellow)
+                    }
+                    Text("\(DateFormatter.localizedString(from: Date(timeIntervalSince1970: TimeInterval(city.sys?.sunrise ?? 0)), dateStyle: .none, timeStyle: .short))")
+                    
                     Spacer()
                 }.skeletonable().skeletonCornerRadius(15)
-                HStack{
+                Divider()
+                VStack{
+                    
+                    HStack{
+                        Spacer()
+                        Text("Sunset: ")
+                        Image(systemName: "sunset.fill").foregroundColor(Color.orange)
+                    }
+                    Text("\(DateFormatter.localizedString(from: Date(timeIntervalSince1970: TimeInterval(city.sys?.sunset ?? 0)), dateStyle: .none, timeStyle: .short))")
                     Spacer()
-                    Text("Weather is mostly \(city.weather?[0].description ?? "Clear")")
-                    Spacer()
+                }.skeletonable().skeletonCornerRadius(15)
+                Divider()
+                VStack{
+                    
+                    HStack{
+                        Spacer()
+                        Text("Weather :")
+                        Image(systemName: getWeatherIcon(iconName: city.weather?[0].icon ?? "01d").0)
+                            .foregroundColor(getWeatherIcon(iconName: city.weather?[0].icon ?? "01d").1)
+                    }
+                    Text("\(city.weather?[0].description ?? "Clear")").font(.caption)
                     //Image(systemName: getWeatherIcon(iconName: city.weather?[0].icon ?? "01d"))
-                    Image(systemName: getWeatherIcon(iconName: city.weather?[0].icon ?? "01d").0)
-                        .foregroundColor(getWeatherIcon(iconName: city.weather?[0].icon ?? "01d").1)
                     Spacer()
                 }.skeletonable().skeletonCornerRadius(15).padding(.bottom)
             }
@@ -43,7 +56,7 @@ struct CityDescription: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.gray.opacity(0.3))
         .cornerRadius(25)
-        .padding(.all)
+        .padding(.horizontal)
         .setSkeleton(Binding(get: { self.modelData.isLoading }, set: { self.modelData.isLoading = $0 }))
         Spacer()
     }

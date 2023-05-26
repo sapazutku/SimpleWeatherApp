@@ -11,7 +11,7 @@ struct CitySelection: View {
     @EnvironmentObject var modelData: ModelData
     @State private var searchText = ""
     @State private var selectedCityId: Int?
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -49,7 +49,7 @@ struct CitySelection: View {
 
 struct SearchBar: View {
     @Binding var text: String
-
+    
     var body: some View {
         TextField("Search", text: $text)
             .padding(7)
