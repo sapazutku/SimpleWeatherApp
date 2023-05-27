@@ -50,6 +50,16 @@
         }
     },
     {
+        "id": 7280290,
+        "name": "Taipei",
+        "state": "",
+        "country": "TW",
+        "coord": {
+            "lon": 121.651611,
+            "lat": 25.025881
+        }
+    },
+    {
         "id": 2643743,
         "name": "London",
         "state": "",
@@ -57,6 +67,16 @@
         "coord": {
             "lon": -0.12574,
             "lat": 51.50853
+        }
+    },
+    {
+        "id": 2648579,
+        "name": "Glasgow",
+        "state": "",
+        "country": "GB",
+        "coord": {
+            "lon": -4.25763,
+            "lat": 55.86515
         }
     },
     {
@@ -80,6 +100,16 @@
         }
     },
     {
+        "id": 2759794,
+        "name": "Amsterdam",
+        "state": "",
+        "country": "NL",
+        "coord": {
+            "lon": 4.88969,
+            "lat": 52.374031
+        }
+    },
+    {
         "id": 3169070,
         "name": "Rome",
         "state": "",
@@ -97,6 +127,75 @@
         "coord": {
             "lon": -60.0,
             "lat": -36.0
+        }
+    },
+    {
+        "id": 1609350,
+        "name": "Bangkok",
+        "state": "",
+        "country": "TH",
+        "coord": {
+            "lon": 100.51667,
+            "lat": 13.75
+        }
+    },
+    {
+        "id": 1850147,
+        "name": "Tokyo",
+        "state": "",
+        "country": "JP",
+        "coord": {
+            "lon": 139.691711,
+            "lat": 35.689499
+        }
+    },
+    {
+        "id": 2130658,
+        "name": "Aomori",
+        "state": "",
+        "country": "JP",
+        "coord": {
+            "lon": 140.740005,
+            "lat": 40.82444
+        }
+    },
+    {
+        "id": 1835847,
+        "name": "Seoul",
+        "state": "",
+        "country": "KR",
+        "coord": {
+            "lon": 127.0,
+            "lat": 37.583328
+        }
+    },{
+        "id": 1880252,
+        "name": "Singapore",
+        "state": "",
+        "country": "SG",
+        "coord": {
+            "lon": 103.850067,
+            "lat": 1.28967
+        }
+    },
+    {
+        "id": 6548528,
+        "name": "Bergen",
+        "state": "",
+        "country": "DE",
+        "coord": {
+            "lon": 12.27917,
+            "lat": 50.476391
+        }
+    },
+    {
+        "id": 6173331,
+        "name": "Vancouver",
+        "state": "",
+        "country": "CA",
+        "coord": {
+            "lon": -123.119339,
+            "lat": 49.24966
         }
     }
 ]
