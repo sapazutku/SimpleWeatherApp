@@ -48,7 +48,6 @@ struct CityDescription: View {
                             .foregroundColor(getWeatherIcon(iconName: city.weather?[0].icon ?? "01d").1)
                     }
                     Text("\(city.weather?[0].description ?? "Clear")").font(.caption)
-                    //Image(systemName: getWeatherIcon(iconName: city.weather?[0].icon ?? "01d"))
                     Spacer()
                 }.skeletonable().skeletonCornerRadius(15).padding(.bottom)
             }

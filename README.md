@@ -8,6 +8,24 @@ This project is a simple weather iOS app with a MVC architecture. Developed for 
 - Search Cities
 - MVC Architecture
 
+## Libraries/Dependencies
+
+- SwiftUI
+- [Moya](https://github.com/Moya/Moya): Network abstraction library.
+- SpriteKit: 2D game engine.
+- CoreLocation: Framework for location based services.
+- [EasySkeleton](https://github.com/SpectralDragon/EasySkeleton): Loading animation for SwiftUI.
+- [OpenWeather API](https://openweathermap.org/api)
+
+
+## Architecture
+
+- MVC (Model-View-Controller)
+  
+<div align="center">
+    <img src="Images/arch.png" alt="mvc" />
+</div>
+
   
 ## Screen Shots
 
@@ -20,15 +38,6 @@ This project is a simple weather iOS app with a MVC architecture. Developed for 
 </div>
 
 
-  
-## Libraries/Dependencies
-
-- SwiftUI
-- [Moya](https://github.com/Moya/Moya)
-- SpriteKit
-- CoreLocation
-- [EasySkeleton](https://github.com/SpectralDragon/EasySkeleton)
-- [OpenWeather API](https://openweathermap.org/api)
 
 ## Assets
 

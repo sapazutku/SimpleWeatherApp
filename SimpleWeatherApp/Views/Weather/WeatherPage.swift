@@ -12,33 +12,48 @@ struct WeatherPage: View {
     @EnvironmentObject var modelData: ModelData
     var city: City
     
+    // weatherScenes combine background with animation
+    struct WeatherScene {
+        let gradientColors: [Color]
+        let spriteScene: SKScene
+    }
+    
+    let weatherScenes: [String: WeatherScene] = [
+        "Clear": WeatherScene(
+            gradientColors: [Color.orange, Color.blue],
+            spriteScene: SunnyScene(size: CGSize(width: 1250, height: 2500))
+        ),
+        "Clouds": WeatherScene(
+            gradientColors: [Color.gray, Color.blue],
+            spriteScene: CloudScene(size: CGSize(width: 1250, height: 2500))
+        ),
+        "Rain": WeatherScene(
+            gradientColors: [Color.gray, Color.darkBlue],
+            spriteScene: RainFall()
+        ),
+        "Snow": WeatherScene(
+            gradientColors: [Color.white, Color.lightGray],
+            spriteScene: Snow()
+        ),
+        "Drizzle": WeatherScene(
+            gradientColors: [Color.lightBlue, Color.gray],
+            spriteScene: Drizzle()
+        )
+    ]
+    
     var body: some View {
+        let weatherMain = city.weather?[0].main ?? "Clear"  // Default to "Clear"
+        let weatherScene = weatherScenes[weatherMain] ?? weatherScenes["Clear"]!  // Default to "Clear" scene if not found
         
         ZStack {
-            ZStack {
-                LinearGradient(gradient: Gradient(colors: weatherGradient), startPoint: .top, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all)
-                
-                // MARK: Animations
-                if city.weather?[0].main == "Rain" {
-                    SpriteView(scene: RainFall(), options: [.allowsTransparency])
-                }
-                if city.weather?[0].main == "Snow"{
-                    SpriteView(scene: Snow(), options: [.allowsTransparency])
-                }
-                if city.weather?[0].main == "Clouds"{
-                    SpriteView(scene: CloudScene(size: CGSize(width: 1250, height: 2500)), options: [.allowsTransparency])
-                }
-                if city.weather?[0].main == "Drizzle" {
-                    SpriteView(scene: Drizzle(), options: [.allowsTransparency])
-                }
-                
-                if city.weather?[0].main == "Clear" {
-                    SpriteView(scene: SunnyScene(size: CGSize(width: 1250, height: 2500)), options: [.allowsTransparency])
-                }
-                
-                // MARK: Content
-            }
+            // Background
+            LinearGradient(gradient: Gradient(colors: weatherScene.gradientColors), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            
+            // Animation
+            SpriteView(scene: weatherScene.spriteScene, options: [.allowsTransparency])
+            
+            // Content
             VStack {
                 ScrollView{
                     CityHeader(city: city, modelData: modelData).padding(.horizontal)
@@ -51,30 +66,8 @@ struct WeatherPage: View {
             .background(Color.white.opacity(0.5))
         }
     }
-    
-    var weatherGradient: [Color] {
-        switch city.weather?[0].main {
-        case "Clear":
-            return [Color.orange, Color.blue]
-        case "Clouds":
-            return [Color.gray, Color.blue]
-        case "Rain":
-            return [Color.gray, Color.darkBlue]
-        case "Snow":
-            return [Color.white, Color.lightGray]
-        case "Drizzle":
-            return [Color.lightBlue, Color.gray]
-        case "Thunderstorm":
-            return [Color.black, Color.darkGray]
-        case "Mist", "Fog":
-            return [Color.lightGray, Color.darkGray]
-        default:
-            return [Color.blue, Color.purple]
-        }
-    }
-    
-    
 }
+
 
 
 struct WeatherPage_Previews: PreviewProvider {
